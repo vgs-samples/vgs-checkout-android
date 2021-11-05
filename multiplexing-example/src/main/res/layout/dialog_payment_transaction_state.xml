@@ -31,7 +31,7 @@
             android:id="@+id/transactionProgressView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@android:style/Widget.ProgressBar.Large.Inverse"/>
+            style="@android:style/Widget.Material.Light.ProgressBar.Large.Inverse"/>
 
     </FrameLayout>
 
@@ -42,7 +42,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/margin_padding_size_micro"
         android:gravity="center"
-        android:text="Unable to Process"
+        android:text="Processing..."
         android:textColor="@android:color/black"
         android:textSize="25dp"/>
 

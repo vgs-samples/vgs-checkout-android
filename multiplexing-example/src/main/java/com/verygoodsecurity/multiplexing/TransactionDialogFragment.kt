@@ -81,10 +81,7 @@ class TransactionDialogFragment : DialogFragment() {
             transactionProgressView.visibility = View.VISIBLE
             startPaymentTransaction()
         } else {
-            transactionProgressView.visibility = View.INVISIBLE
-            failedImgView.visibility = View.VISIBLE
-            okBtn.visibility = View.VISIBLE
-            retryBtn.visibility = View.VISIBLE
+            showFailedStatus()
         }
 
         return view
@@ -103,7 +100,6 @@ class TransactionDialogFragment : DialogFragment() {
     }
 
     private fun handlePaymentResponse(code: Int, body: String?) {
-
         if (code in 200..299) {
             this@TransactionDialogFragment.activity?.runOnUiThread {
                 title.text = "Thank You"
@@ -115,16 +111,20 @@ class TransactionDialogFragment : DialogFragment() {
             }
         } else {
             this@TransactionDialogFragment.activity?.runOnUiThread {
-                title.text = "Transfer Failed"
-                message.visibility = View.VISIBLE
-                message.text = "Invalid transaction,\nplease check" +
-                        " the submitted card information and try again."
-                transactionProgressView.visibility = View.INVISIBLE
-                failedImgView.visibility = View.VISIBLE
-                retryBtn.visibility = View.VISIBLE
-                okBtn.visibility = View.VISIBLE
+                showFailedStatus()
             }
         }
+    }
+
+    private fun showFailedStatus() {
+        title.text = "Transfer Failed"
+        message.visibility = View.VISIBLE
+        message.text = "Invalid transaction,\nplease check" +
+                " the submitted card information and try again."
+        transactionProgressView.visibility = View.INVISIBLE
+        failedImgView.visibility = View.VISIBLE
+        retryBtn.visibility = View.VISIBLE
+        okBtn.visibility = View.VISIBLE
     }
 
     private fun String.mapToJson(): String {
