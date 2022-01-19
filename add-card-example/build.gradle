@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+apply from: '../gradle/util.gradle'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.verygoodsecurity.add_card"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "TENANT_ID", "\"${getLocalProperty("STORAGE_ID")}\""
+        buildConfigField "String", "VAULT_ID", "\"${getLocalProperty("STORAGE_ID")}\""
+        buildConfigField "String", "CLIENT_HOST", "\"${getLocalProperty("CLIENT_HOST")}\""
+        buildConfigField "String", "GET_TOKEN_ENDPOINT", "\"${getLocalProperty("GET_TOKEN_ENDPOINT")}\""
+        buildConfigField "String", "TRANSFERS_ENDPOINT", "\"${getLocalProperty("TRANSFERS_ENDPOINT")}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'com.verygoodsecurity:vgscheckout:1.1.0'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$app_compat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+}
