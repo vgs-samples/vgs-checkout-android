@@ -1,4 +1,3 @@
-[![UT](https://img.shields.io/badge/Unit_Test-pass-green)]()
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/verygoodsecurity/vgs-collect-android/blob/master/LICENSE)
 <img src="./img/ZeroDataLogo.png" width="55" hspace="8">
 
@@ -27,15 +26,11 @@ Table of contents
 
 
 ## Structure
-* **custom-example** - sample application of VGS Checkout with custom configuration for communication with VGS Proxy.
-* **multiplexing-example** - sample application of VGS Checkout with multiplexing configuration for communication with payment optimization solution.
-* **vgscheckout** - provides an API for interacting with the VGS services.
+* **add-cards-example** - sample application of VGS Checkout which shows how to submit card data with VGS.
 
 
 ## Integration
 For integration you need to install the [Android Studio](http://developer.android.com/sdk/index.html) and a [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) on your machine.
-
-
 
 
 
