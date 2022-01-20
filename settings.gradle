@@ -7,5 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "VGS Checkout Demo"
-include ':custom-example'
-include ':multiplexing-example'
+include ':add-card-example'

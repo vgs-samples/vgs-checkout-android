@@ -1,11 +1,18 @@
 buildscript {
+    ext.gradle_tools = "7.0.4"
+    ext.kotlin_version = "1.6.10"
+    ext.app_compat = "1.4.1"
+    ext.core_ktx = "1.7.0"
+    ext.material = "1.4.0"
+    ext.okHttp = "4.9.3"
+
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.3"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+        classpath "com.android.tools.build:gradle:$gradle_tools"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
